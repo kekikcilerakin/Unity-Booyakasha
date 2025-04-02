@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb9c12a8c6c949f7af83a3d238359d0, type: 3}
-  m_Name: vFolders Data
+  m_Script: {fileID: 11500000, guid: e84cd50309363d4439b271c45428a4b1, type: 3}
+  m_Name: Maria
   m_EditorClassIdentifier: 
-  folderDatas_byGuid:
-    keys: []
-    values: []
-  bookmarks:
-  - guid: 9c53962885c2c4f449125a979d6ad240
-  - guid: 17c33791e4d953c48b8e94b702194ad1
-  - guid: 36686c28c8abf6d4dac628178bb98702
+  characterName: Maria
+  nameColor: {r: 0.764151, g: 0.26312745, b: 0.5981708, a: 1}
+  pitchModifier: 1
