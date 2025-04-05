@@ -1,10 +1,11 @@
 using UnityEngine;
+using System;
 
-[System.Serializable]
+[Serializable]
 public class DialogueLine
 {
   [Tooltip("Konuşan karakter")]
-  public Character character;
+  public CharacterSO character;
 
   [Tooltip("Karakterin bu satırdaki özel adı (boş bırakılırsa karakter nesnesindeki isim kullanılır)")]
   public string overrideSpeakerName;

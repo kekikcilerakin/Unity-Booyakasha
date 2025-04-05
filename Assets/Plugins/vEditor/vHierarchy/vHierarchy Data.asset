@@ -966,6 +966,9 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-885625416-0
         - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1255990150-0
         - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1702093991-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1971146570-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1556196729-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1012732862-0
         values:
         - colorIndex: 7
           iconNameOrGuid: 
@@ -1257,6 +1260,18 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 0
           iconNameOrGuid: EventSystem Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 4
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
+        - colorIndex: 9
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 1
+        - colorIndex: 1
+          iconNameOrGuid: 
           isIconRecursive: 0
           isColorRecursive: 0
     - goDatas_byGlobalId:

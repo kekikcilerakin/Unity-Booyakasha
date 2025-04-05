@@ -18,7 +18,7 @@ public class DialogueTrigger : MonoBehaviour
     {
       TriggerDialogue();
     }
-    
+
     // Diyaloğu ilerleme/atlama tuşu (zaten başladıysa)
     else if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && dialogueStarted)
     {

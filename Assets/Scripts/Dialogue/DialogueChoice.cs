@@ -1,7 +1,6 @@
-using UnityEngine;
 using System;
 
-[System.Serializable]
+[Serializable]
 public class DialogueChoice
 {
   public string choiceText;
