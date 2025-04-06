@@ -97,16 +97,6 @@ public class DialogueManager : MonoBehaviour
       {
         dialogueAudioSource.clip = line.audioClip;
 
-        // Eğer karakterin bir ses modulasyonu varsa uygula
-        if (line.character != null)
-        {
-          dialogueAudioSource.pitch = line.character.pitchModifier;
-        }
-        else
-        {
-          dialogueAudioSource.pitch = 1.0f;
-        }
-
         dialogueAudioSource.Play();
       }
 

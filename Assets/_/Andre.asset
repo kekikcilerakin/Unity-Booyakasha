@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e84cd50309363d4439b271c45428a4b1, type: 3}
-  m_Name: Alex
+  m_Name: Andre
   m_EditorClassIdentifier: 
-  characterName: Alex
+  characterName: Andre
   nameColor: {r: 0.455228, g: 0.8584906, b: 0.376602, a: 1}
-  pitchModifier: 1
+  skinColorPresetIndex: 0
+  hairStyleIndex: 0
+  hairColorIndex: 0
+  facialHairIndex: -1
+  hatIndex: -1
+  topIndex: 0
+  pantsIndex: 0
+  shoesIndex: 0

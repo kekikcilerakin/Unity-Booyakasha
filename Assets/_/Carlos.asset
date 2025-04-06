@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84cd50309363d4439b271c45428a4b1, type: 3}
   m_Name: Carlos
   m_EditorClassIdentifier: 
-  characterName: Maria
+  characterName: Carlos
   nameColor: {r: 0.35868186, g: 0.26274514, b: 0.7647059, a: 1}
   pitchModifier: 1
