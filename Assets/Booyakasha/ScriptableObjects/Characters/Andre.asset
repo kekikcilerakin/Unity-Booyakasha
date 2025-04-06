@@ -14,11 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Andre
   nameColor: {r: 0.455228, g: 0.8584906, b: 0.376602, a: 1}
-  skinColorPresetIndex: 0
-  hairStyleIndex: 0
-  hairColorIndex: 0
-  facialHairIndex: -1
-  hatIndex: -1
-  topIndex: 0
-  pantsIndex: 0
-  shoesIndex: 0
+  skinColorIndex: 2

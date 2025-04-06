@@ -5,3 +5,5 @@
 *.mat
 *.asset
 *.uxml
+*.unity
+*.anim

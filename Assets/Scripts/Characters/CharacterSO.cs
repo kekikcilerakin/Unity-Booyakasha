@@ -7,9 +7,13 @@ public class CharacterSO : ScriptableObject
   public string characterName;
   public Color nameColor = Color.white;
 
-  [Tooltip("Character audio settings")]
-  [Range(0.8f, 1.2f)]
-  public float pitchModifier = 1.0f;
+  [Header("Appearance")]
+  [SerializeField, Range(0, 7)] private int skinColorIndex;
+  public int SkinColorIndex 
+  { 
+    get => skinColorIndex; 
+    set => skinColorIndex = value;
+  }
 
   // Diğer potansiyel özellikler:
   // public AnimationClip talkAnimation;
