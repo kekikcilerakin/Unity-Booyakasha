@@ -16,11 +16,11 @@ MonoBehaviour:
   - emotionType: 0
     uvOffset: {x: 0, y: 0}
   - emotionType: 1
-    uvOffset: {x: 0, y: 0.5}
+    uvOffset: {x: 0.25, y: 0}
   - emotionType: 2
-    uvOffset: {x: 0.5, y: 0.5}
-  - emotionType: 3
     uvOffset: {x: 0.5, y: 0}
+  - emotionType: 3
+    uvOffset: {x: 0.75, y: 0}
   - emotionType: 4
     uvOffset: {x: 0, y: 0}
   - emotionType: 5

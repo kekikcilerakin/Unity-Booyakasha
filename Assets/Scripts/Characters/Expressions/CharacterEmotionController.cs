@@ -4,7 +4,7 @@ using UnityEngine;
 // Relies on CharacterEmotionManager to get emotion data.
 public class EmotionController : MonoBehaviour
 {
-  [SerializeField] private MeshRenderer faceRenderer;
+  [SerializeField] private SkinnedMeshRenderer faceRenderer;
 
   // Configuration
   private const string textureSTProperty = "_BaseMap_ST";
@@ -54,8 +54,6 @@ public class EmotionController : MonoBehaviour
     faceRenderer.materials = materials;
 
     shaderPropertyID = Shader.PropertyToID(textureSTProperty);
-
-    SetEmotion(EmotionType.Neutral);
   }
 
   // Updates the texture offset on the material.
