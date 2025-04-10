@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Andre
   nameColor: {r: 0.455228, g: 0.8584906, b: 0.376602, a: 1}
-  skinColorIndex: 2
+  skinColorIndex: 6
