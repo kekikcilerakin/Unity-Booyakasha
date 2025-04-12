@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CharacterCreationManager : MonoBehaviour
 {
+  public static CharacterCreationManager Instance;
+
   [Header("Data References")]
   [SerializeField] private CharacterSO characterData;
   [SerializeField] private SkinColorData skinColorData;
@@ -15,6 +17,19 @@ public class CharacterCreationManager : MonoBehaviour
 
   // Temporary selections that aren't committed to the character data yet
   private int selectedSkinColorIndex;
+
+  private void Awake()
+  {
+    if (Instance == null)
+    {
+      Instance = this;
+      DontDestroyOnLoad(gameObject);
+    }
+    else
+    {
+      Destroy(gameObject);
+    }
+  }
 
   private void Start()
   {

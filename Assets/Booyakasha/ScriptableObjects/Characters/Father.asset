@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Father the OG
   nameColor: {r: 0.9056604, g: 0.40583837, b: 0.40583837, a: 1}
-  pitchModifier: 1
+  skinColorIndex: 6

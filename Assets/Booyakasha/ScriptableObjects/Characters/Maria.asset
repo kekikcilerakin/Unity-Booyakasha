@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Maria
   nameColor: {r: 0.764151, g: 0.26312745, b: 0.5981708, a: 1}
-  pitchModifier: 1
+  skinColorIndex: 5
