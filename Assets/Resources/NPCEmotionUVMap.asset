@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e5c33bb5fb73b24580abe2ff73629c1, type: 3}
-  m_Name: EmotionData
+  m_Name: NPCEmotionUVMap
   m_EditorClassIdentifier: 
-  emotionOffsets:
+  emotionMappings:
   - emotionType: 0
     uvOffset: {x: 0, y: 0}
   - emotionType: 1
@@ -20,7 +20,7 @@ MonoBehaviour:
   - emotionType: 2
     uvOffset: {x: 0.5, y: 0}
   - emotionType: 3
-    uvOffset: {x: 0.75, y: 0}
+    uvOffset: {x: 0, y: 0}
   - emotionType: 4
     uvOffset: {x: 0, y: 0}
   - emotionType: 5

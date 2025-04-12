@@ -1360,7 +1360,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 1
-    Time: 2
+    Time: 0.25
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -3150,8 +3150,8 @@ GameObject:
   - component: {fileID: 754830064}
   - component: {fileID: 754830063}
   - component: {fileID: 754830067}
-  - component: {fileID: 754830066}
   - component: {fileID: 754830068}
+  - component: {fileID: 754830066}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -6586,6 +6586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceRenderer: {fileID: 5782369195075855557}
+  faceTextureIndex: 0
+  textureSTProperty: _BaseMap_ST
 --- !u!1001 &1149709589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7997,7 +7999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370934307}
   - component: {fileID: 1370934305}
-  - component: {fileID: 1370934306}
+  - component: {fileID: 1370934308}
   m_Layer: 0
   m_Name: EmotionManager
   m_TagString: Untagged
@@ -8017,20 +8019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05549722bb0423d4ebc17f77e7e99ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1370934306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370934304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e19f3ddca38d7f48911bb21e5664643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterEmotionController1: {fileID: 1145882721}
-  characterEmotionController2: {fileID: 0}
 --- !u!4 &1370934307
 Transform:
   m_ObjectHideFlags: 0
@@ -8046,6 +8034,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370934308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370934304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37feab73ecf5214989168a805b160cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emotionController: {fileID: 1145882721}
 --- !u!1 &1371130433
 GameObject:
   m_ObjectHideFlags: 0
@@ -11618,6 +11619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceRenderer: {fileID: 1924488514}
+  faceTextureIndex: 0
+  textureSTProperty: _BaseMap_ST
 --- !u!1 &2023532287
 GameObject:
   m_ObjectHideFlags: 0

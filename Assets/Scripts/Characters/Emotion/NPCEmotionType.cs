@@ -1,4 +1,4 @@
-public enum EmotionType
+public enum NPCEmotionType
 {
   Neutral,
   Happy,
