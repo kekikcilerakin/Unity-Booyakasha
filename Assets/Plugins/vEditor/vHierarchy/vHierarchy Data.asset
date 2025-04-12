@@ -976,6 +976,9 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-274855980-0
         - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-9167907554357116246-1176938228
         - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1958280507-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1211053960-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1357622840-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d589b32ee1148b34f91bff188c5e762a-1937620721-0
         values:
         - colorIndex: 7
           iconNameOrGuid: 
@@ -1307,6 +1310,18 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 2
           iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
           isIconRecursive: 0
           isColorRecursive: 0
     - goDatas_byGlobalId:

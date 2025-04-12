@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -8,7 +10,19 @@ public class DialogueManager : MonoBehaviour
   [SerializeField] private DialogueUI dialogueUI;
   [SerializeField] private DialogueChoiceUI choiceUI;
 
-  // Ses kontrolü için AudioSource ekleyelim
+  [Header("Sequence Events")]
+  [SerializeField] private UnityEvent onAnySequenceStarted = new UnityEvent();
+  [SerializeField] private UnityEvent onAnySequenceEnded = new UnityEvent();
+
+  // Events that can be subscribed to for specific sequences
+  public event Action<DialogueSequence> OnSequenceStarted;
+  public event Action<DialogueSequence> OnSequenceEnded;
+
+  // Events that can be subscribed to for specific lines
+  public event Action<DialogueSequence, int> OnLineDisplayed;
+  public event Action<DialogueSequence, int> OnLineTypingComplete;
+  public event Action<DialogueSequence, int> OnLineFinished;
+
   private AudioSource dialogueAudioSource;
 
   private DialogueSequence currentSequence;
@@ -28,7 +42,6 @@ public class DialogueManager : MonoBehaviour
       Destroy(gameObject);
     }
 
-    // AudioSource komponentini oluşturalım veya alalım
     dialogueAudioSource = GetComponent<AudioSource>();
     if (dialogueAudioSource == null)
     {
@@ -53,6 +66,9 @@ public class DialogueManager : MonoBehaviour
     currentLineIndex = 0;
     isPlaying = true;
 
+    onAnySequenceStarted?.Invoke();
+    OnSequenceStarted?.Invoke(sequence);
+
     playingCoroutine = StartCoroutine(PlaySequenceCoroutine());
   }
 
@@ -64,14 +80,20 @@ public class DialogueManager : MonoBehaviour
       playingCoroutine = null;
     }
 
-    // Ses çalıyorsa durdur
     StopDialogueAudio();
+
+    if (currentSequence != null)
+    {
+      var sequence = currentSequence;
+      onAnySequenceEnded?.Invoke();
+      OnSequenceEnded?.Invoke(sequence);
+      currentSequence = null;
+    }
 
     isPlaying = false;
     dialogueUI.Hide();
   }
 
-  // Diyalog sesini durdur
   private void StopDialogueAudio()
   {
     if (dialogueAudioSource != null && dialogueAudioSource.isPlaying)
@@ -86,84 +108,48 @@ public class DialogueManager : MonoBehaviour
     {
       DialogueLine line = currentSequence.lines[currentLineIndex];
 
-      // UI'yi göster ve yazı animasyonunu başlat
+      // Trigger line displayed events
+      OnLineDisplayed?.Invoke(currentSequence, currentLineIndex);
+
       dialogueUI.ShowDialogueLine(line);
 
-      // Önceki sesi durdur ve yeni sesi çal
       StopDialogueAudio();
 
-      // Ses efektini oynat
       if (line.audioClip != null)
       {
         dialogueAudioSource.clip = line.audioClip;
-
         dialogueAudioSource.Play();
       }
 
-      // Yazı animasyonu bitene kadar bekleyelim
       bool typingComplete = false;
-      dialogueUI.OnTypingCompleted = () => typingComplete = true;
+      dialogueUI.OnTypingCompleted = () => 
+      {
+        typingComplete = true;
+        // Trigger typing complete events
+        OnLineTypingComplete?.Invoke(currentSequence, currentLineIndex);
+      };
 
-      // Yazı tamamlanana kadar bekle
       yield return new WaitUntil(() => typingComplete);
 
-      // Yazı tamamlandıktan sonra, konfigüre edilmiş süre kadar bekle
       yield return new WaitForSeconds(line.calculatedDisplayTime);
+
+      // Trigger line finished events
+      OnLineFinished?.Invoke(currentSequence, currentLineIndex);
 
       currentLineIndex++;
     }
 
-    // Diyalog bittiğinde, eğer interaktif bir diyalogsa seçenekleri göster
     if (currentSequence.isInteractive && currentSequence.choices != null && currentSequence.choices.Count > 0)
     {
       choiceUI.ShowChoices(currentSequence.choices);
     }
     else
     {
+      var sequence = currentSequence;
+      onAnySequenceEnded?.Invoke();
+      OnSequenceEnded?.Invoke(sequence);
       isPlaying = false;
       dialogueUI.Hide();
-    }
-  }
-
-  // Oyuncu Input'u ile ilerleme
-  public void AdvanceDialogue()
-  {
-    if (!isPlaying) return;
-
-    // Eğer yazı hala yazılıyorsa, yazıyı tamamla
-    if (dialogueUI.IsTyping())
-    {
-      dialogueUI.CompleteTyping();
-      return;
-    }
-
-    // Eğer bir satır gösteriliyorsa, bir sonraki satıra geç
-    if (currentLineIndex < currentSequence.lines.Count)
-    {
-      StopCoroutine(playingCoroutine);
-
-      // Ses çalıyorsa durdur
-      StopDialogueAudio();
-
-      currentLineIndex++;
-
-      if (currentLineIndex < currentSequence.lines.Count)
-      {
-        playingCoroutine = StartCoroutine(PlaySequenceCoroutine());
-      }
-      else
-      {
-        // Son satırın sonunda, interaktif diyalog kontrolü yapın
-        if (currentSequence.isInteractive && currentSequence.choices != null && currentSequence.choices.Count > 0)
-        {
-          choiceUI.ShowChoices(currentSequence.choices);
-        }
-        else
-        {
-          isPlaying = false;
-          dialogueUI.Hide();
-        }
-      }
     }
   }
 }

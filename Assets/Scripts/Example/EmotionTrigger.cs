@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EmotionTrigger : MonoBehaviour
 {
-    [SerializeField] private EmotionController characterEmotionController1;
-    [SerializeField] private EmotionController characterEmotionController2;
+    [SerializeField] private NPCEmotionController characterEmotionController1;
+    [SerializeField] private NPCEmotionController characterEmotionController2;
 
     public void TriggerEmotion1(EmotionType emotion)
     {

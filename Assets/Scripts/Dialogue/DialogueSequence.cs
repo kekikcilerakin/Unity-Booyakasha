@@ -12,18 +12,14 @@ public class DialogueSequence : ScriptableObject
 
   public void OnValidate()
   {
-    // Her satır için gösterim süresini hesapla
     foreach (var line in lines)
     {
-      // Minimum gösterim süresinin en az 1 saniye olmasını sağla
       if (line.minDisplayTime < 1f)
       {
         line.minDisplayTime = 1f;
       }
 
-      // Her karaktere 0.05 saniye ayır (okuma hızı)
       float timeBasedOnLength = line.text.Length * 0.05f;
-      // En az 1 saniye, en çok 2.5 saniye
       line.calculatedDisplayTime = Mathf.Clamp(timeBasedOnLength, line.minDisplayTime, 2.5f);
     }
   }

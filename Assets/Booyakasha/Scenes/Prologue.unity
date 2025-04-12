@@ -271,6 +271,9 @@ Transform:
   m_Children:
   - {fileID: 330585546}
   - {fileID: 274855981}
+  - {fileID: 1211053961}
+  - {fileID: 1357622841}
+  - {fileID: 1937620722}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85196655
@@ -969,7 +972,7 @@ GameObject:
   - component: {fileID: 274855982}
   - component: {fileID: 274855983}
   m_Layer: 0
-  m_Name: PlayerFollowCamera Idle
+  m_Name: Prologue Player Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3146,7 +3149,9 @@ GameObject:
   m_Component:
   - component: {fileID: 754830064}
   - component: {fileID: 754830063}
+  - component: {fileID: 754830067}
   - component: {fileID: 754830066}
+  - component: {fileID: 754830068}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -3168,6 +3173,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 1121194158}
   choiceUI: {fileID: 169988595}
+  onAnySequenceStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onAnySequenceEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &754830064
 Transform:
   m_ObjectHideFlags: 0
@@ -3280,6 +3291,156 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &754830067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754830062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1f542d6766ba94fa4d540638aedc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceEvents:
+  - sequence: {fileID: 11400000, guid: 68ae27bb33e411a4cb96c1d6d476323b, type: 2}
+    onStarted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1958280508}
+          m_TargetAssemblyTypeName: Prologue, Assembly-CSharp
+          m_MethodName: DisablePlayerInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onEnded:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1958280508}
+          m_TargetAssemblyTypeName: Prologue, Assembly-CSharp
+          m_MethodName: EnablePlayerInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &754830068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754830062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db1c48586f14694db03f28506c2a307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineEvents:
+  - sequence: {fileID: 11400000, guid: 68ae27bb33e411a4cb96c1d6d476323b, type: 2}
+    lineId: prologue_father_1
+    onLineDisplayed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1998303573}
+          m_TargetAssemblyTypeName: NPCEmotionController, Assembly-CSharp
+          m_MethodName: SetEmotionAngry
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1958280508}
+          m_TargetAssemblyTypeName: Prologue, Assembly-CSharp
+          m_MethodName: SwitchToFatherCamera
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLineTypingComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1998303573}
+          m_TargetAssemblyTypeName: NPCEmotionController, Assembly-CSharp
+          m_MethodName: SetEmotionNeutral
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLineFinished:
+      m_PersistentCalls:
+        m_Calls: []
+  - sequence: {fileID: 11400000, guid: 68ae27bb33e411a4cb96c1d6d476323b, type: 2}
+    lineId: prologue_maria_1
+    onLineDisplayed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1958280508}
+          m_TargetAssemblyTypeName: Prologue, Assembly-CSharp
+          m_MethodName: SwitchToMariaCamera
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLineTypingComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineFinished:
+      m_PersistentCalls:
+        m_Calls: []
+  - sequence: {fileID: 11400000, guid: 68ae27bb33e411a4cb96c1d6d476323b, type: 2}
+    lineId: prologue_carlos_1
+    onLineDisplayed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1958280508}
+          m_TargetAssemblyTypeName: Prologue, Assembly-CSharp
+          m_MethodName: SwitchToCarlosCamera
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onLineTypingComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineFinished:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1001 &767945973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6374,6 +6535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145882719}
   - component: {fileID: 1145882720}
+  - component: {fileID: 1145882721}
   m_Layer: 0
   m_Name: Maria
   m_TagString: Untagged
@@ -6410,7 +6572,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSO: {fileID: 11400000, guid: 39ea00bedca784b46aea1f40fb74ea31, type: 2}
-  skinRenderer: {fileID: 0}
+  skinRenderer: {fileID: 8446985645282450611}
+--- !u!114 &1145882721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145882718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a519c9cf9dfac44b4d6ff34ac46eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceRenderer: {fileID: 5782369195075855557}
 --- !u!1001 &1149709589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6798,6 +6973,122 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 0, y: 116}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &1211053960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211053961}
+  - component: {fileID: 1211053963}
+  - component: {fileID: 1211053962}
+  - component: {fileID: 1211053964}
+  m_Layer: 0
+  m_Name: Prologue Camera Father
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1211053961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211053960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.5384723, z: 0, w: 0.8426432}
+  m_LocalPosition: {x: 0.723, y: 1.5, z: 8.634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 61100174}
+  m_LocalEulerAnglesHint: {x: 0, y: 49.02, z: 0}
+--- !u!114 &1211053962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211053960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damping: {x: 0, y: 0, z: 0}
+  ShoulderOffset: {x: 0, y: 0, z: 0}
+  VerticalArmLength: 0
+  CameraSide: 0.6
+  CameraDistance: 0
+  AvoidObstacles:
+    Enabled: 1
+    CollisionFilter:
+      serializedVersion: 2
+      m_Bits: 1
+    IgnoreTag: Player
+    CameraRadius: 0.15
+    DampingIntoCollision: 0
+    DampingFromCollision: 0
+--- !u!114 &1211053963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211053960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 5221902317658899204}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.01
+    FarClipPlane: 500
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!114 &1211053964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211053960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtOffset: {x: 0.87, y: 0, z: 0}
 --- !u!1 &1223375555
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,6 +7831,122 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317262271}
   m_CullTransparentMesh: 1
+--- !u!1 &1357622840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357622841}
+  - component: {fileID: 1357622843}
+  - component: {fileID: 1357622842}
+  - component: {fileID: 1357622844}
+  m_Layer: 0
+  m_Name: Prologue Camera Maria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1357622841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357622840}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.2505445, z: 0, w: 0.9681051}
+  m_LocalPosition: {x: 0.723, y: 1.5, z: 8.634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 61100174}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357622842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357622840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damping: {x: 0, y: 0, z: 0}
+  ShoulderOffset: {x: 0, y: 0, z: 0}
+  VerticalArmLength: 0
+  CameraSide: 0.6
+  CameraDistance: 0
+  AvoidObstacles:
+    Enabled: 1
+    CollisionFilter:
+      serializedVersion: 2
+      m_Bits: 1
+    IgnoreTag: Player
+    CameraRadius: 0.15
+    DampingIntoCollision: 0
+    DampingFromCollision: 0
+--- !u!114 &1357622843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357622840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 5221902317658899204}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.01
+    FarClipPlane: 500
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!114 &1357622844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357622840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtOffset: {x: -1.09, y: 0, z: 0}
 --- !u!1 &1367385208
 GameObject:
   m_ObjectHideFlags: 0
@@ -7597,7 +8004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1370934305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7622,7 +8029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e19f3ddca38d7f48911bb21e5664643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterEmotionController1: {fileID: 0}
+  characterEmotionController1: {fileID: 1145882721}
   characterEmotionController2: {fileID: 0}
 --- !u!4 &1370934307
 Transform:
@@ -8677,7 +9084,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1476292753}
   - component: {fileID: 1476292752}
-  - component: {fileID: 1476292751}
   m_Layer: 0
   m_Name: PlayerPlaceholder
   m_TagString: Untagged
@@ -8685,19 +9091,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1476292751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476292750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e050b945ebef3c41895c712166b90a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faceRenderer: {fileID: 0}
 --- !u!95 &1476292752
 Animator:
   serializedVersion: 7
@@ -10832,6 +11225,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907065264}
   m_CullTransparentMesh: 1
+--- !u!137 &1924488514 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8749818890848191793, guid: cd936a6670034134fa7d8a5748fe3283, type: 3}
+  m_PrefabInstance: {fileID: 1498208713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937620721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937620722}
+  - component: {fileID: 1937620724}
+  - component: {fileID: 1937620723}
+  - component: {fileID: 1937620725}
+  m_Layer: 0
+  m_Name: Prologue Camera Carlos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1937620722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937620721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7181717, z: 0, w: 0.695866}
+  m_LocalPosition: {x: 0.723, y: 1.5, z: 8.634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 61100174}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937620723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937620721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damping: {x: 0, y: 0, z: 0}
+  ShoulderOffset: {x: 0, y: 0, z: 0}
+  VerticalArmLength: 0
+  CameraSide: 0.6
+  CameraDistance: 0
+  AvoidObstacles:
+    Enabled: 1
+    CollisionFilter:
+      serializedVersion: 2
+      m_Bits: 1
+    IgnoreTag: Player
+    CameraRadius: 0.15
+    DampingIntoCollision: 0
+    DampingFromCollision: 0
+--- !u!114 &1937620724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937620721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 5221902317658899204}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.01
+    FarClipPlane: 500
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!114 &1937620725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937620721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtOffset: {x: 2.78, y: 0, z: 0}
 --- !u!1 &1958280507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10863,6 +11377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 5212080283486816368}
   dialogueSequence: {fileID: 11400000, guid: 68ae27bb33e411a4cb96c1d6d476323b, type: 2}
+  playerCamera: {fileID: 274855980}
+  fatherCamera: {fileID: 1211053960}
+  mariaCamera: {fileID: 1357622840}
+  carlosCamera: {fileID: 1937620721}
 --- !u!4 &1958280509
 Transform:
   m_ObjectHideFlags: 0
@@ -11063,6 +11581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1998303572}
+  - component: {fileID: 1998303573}
   m_Layer: 0
   m_Name: Father
   m_TagString: Untagged
@@ -11086,6 +11605,19 @@ Transform:
   - {fileID: 1498208714}
   m_Father: {fileID: 1556196730}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1998303573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998303571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a519c9cf9dfac44b4d6ff34ac46eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceRenderer: {fileID: 1924488514}
 --- !u!1 &2023532287
 GameObject:
   m_ObjectHideFlags: 0
@@ -12149,7 +12681,7 @@ GameObject:
   - component: {fileID: 7187506793288688807}
   - component: {fileID: 5782369195075855557}
   m_Layer: 0
-  m_Name: Face_Mouth
+  m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

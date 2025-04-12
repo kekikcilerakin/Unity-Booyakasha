@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Controls facial expressions for a character by manipulating texture offsets.
 // Relies on CharacterEmotionManager to get emotion data.
-public class EmotionController : MonoBehaviour
+public class NPCEmotionController : MonoBehaviour
 {
   [SerializeField] private SkinnedMeshRenderer faceRenderer;
 
@@ -39,6 +39,32 @@ public class EmotionController : MonoBehaviour
     UpdateTextureOffset(offset);
   }
 
+  // Unity Event friendly methods for each emotion type
+  [SerializeField]
+  public void SetEmotionNeutral() => SetEmotion(EmotionType.Neutral);
+
+  [SerializeField]
+  public void SetEmotionHappy() => SetEmotion(EmotionType.Happy);
+
+  [SerializeField]
+  public void SetEmotionSad() => SetEmotion(EmotionType.Sad);
+
+  [SerializeField]
+  public void SetEmotionAngry() => SetEmotion(EmotionType.Angry);
+
+  [SerializeField]
+  public void SetEmotionSurprised() => SetEmotion(EmotionType.Surprised);
+
+  [SerializeField]
+  public void SetEmotionScared() => SetEmotion(EmotionType.Scared);
+
+  [SerializeField]
+  public void SetEmotionDisgusted() => SetEmotion(EmotionType.Disgusted);
+
+  public void testxd()
+  {
+    Debug.Log("testxd");
+  }
   // Returns the character's current emotional state.
   public EmotionType GetCurrentEmotion()
   {

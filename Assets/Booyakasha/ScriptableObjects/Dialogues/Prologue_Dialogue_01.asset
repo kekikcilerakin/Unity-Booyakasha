@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Prologue_Dialogue_01
   m_EditorClassIdentifier: 
   lines:
-  - character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
+  - lineId: prologue_father_1
+    character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -23,7 +24,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 2.5
-  - character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
+  - lineId: prologue_father_2
+    character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -34,7 +36,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 2.5
-  - character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
+  - lineId: prologue_father_3
+    character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -44,7 +47,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 2.2
-  - character: {fileID: 11400000, guid: 61f9ef9cd944d06499049fe9bd091383, type: 2}
+  - lineId: prologue_andre_1
+    character: {fileID: 11400000, guid: 61f9ef9cd944d06499049fe9bd091383, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -54,7 +58,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 1.5500001
-  - character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
+  - lineId: prologue_father_4
+    character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -65,7 +70,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 2.5
-  - character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
+  - lineId: prologue_father_5
+    character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -75,7 +81,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 2.5
-  - character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
+  - lineId: prologue_father_6
+    character: {fileID: 11400000, guid: 914ae8fddd807ee4b9954fce919cb992, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -86,7 +93,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 2.5
-  - character: {fileID: 11400000, guid: 39ea00bedca784b46aea1f40fb74ea31, type: 2}
+  - lineId: prologue_maria_1
+    character: {fileID: 11400000, guid: 39ea00bedca784b46aea1f40fb74ea31, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -96,7 +104,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 1
-  - character: {fileID: 11400000, guid: af2525eff1da51a4e99d5f797eede762, type: 2}
+  - lineId: prologue_carlos_1
+    character: {fileID: 11400000, guid: af2525eff1da51a4e99d5f797eede762, type: 2}
     overrideSpeakerName: 
     useCustomColor: 0
     customColor:
@@ -106,5 +115,5 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     minDisplayTime: 1
     calculatedDisplayTime: 1.7
-  isInteractive: 0
+  isInteractive: 1
   choices: []

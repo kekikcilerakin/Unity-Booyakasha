@@ -4,6 +4,9 @@ using System;
 [Serializable]
 public class DialogueLine
 {
+  [Tooltip("Optional unique identifier for this line (used for triggering events)")]
+  public string lineId;
+
   [Tooltip("Konuşan karakter")]
   public CharacterSO character;
 
@@ -19,9 +22,6 @@ public class DialogueLine
   public AudioClip audioClip;
   public float minDisplayTime = 1f; // Minimum 1 saniye
   public float calculatedDisplayTime; // Hesaplanacak süre
-
-  // Localization için daha sonra eklenecek
-  // public string textID;
 
   // Konuşmacı adını al (override veya karakter adı)
   public string GetSpeakerName()
